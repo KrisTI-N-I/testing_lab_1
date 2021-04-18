@@ -7,6 +7,11 @@ language:
 before_install:
   - pip install --user cpp-coveralls  
 
+addons:
+  sonarcloud:
+    organization: "kristi-n-i"
+  token: $SONAR_KEY
+
 script:
   - qmake
   - make
@@ -14,6 +19,8 @@ script:
   
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner
     
 cache:
   directories:
