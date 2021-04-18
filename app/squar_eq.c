@@ -7,6 +7,10 @@ eq squar_equat(double a, double b, double c)
     solutions.sol_kol = 0;
     double disc = b*b - 4*a*c;
 
+    if (a == 0 && b == 0) {
+        return solutions;
+    }
+
     /* Дискриминант меньше нуля, решений нет */
     if (disc < 0) {
         return solutions;
