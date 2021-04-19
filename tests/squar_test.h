@@ -48,5 +48,12 @@ TEST(squar_eq, double_sol) {
     EXPECT_NEAR(sol.sol_2, 0.25, 0.000001);
 }
 
+TEST(squar_eq, linear) {
+
+    eq sol = squar_equat(0, 2, 2);
+    ASSERT_EQ(sol.sol_kol, 1);
+    EXPECT_NEAR(sol.sol_1, -1, 0.000001);
+}
+
 
 #endif // SQUAR_TEST_H

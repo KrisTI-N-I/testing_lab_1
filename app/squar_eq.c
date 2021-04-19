@@ -11,6 +11,12 @@ eq squar_equat(double a, double b, double c)
         return solutions;
     }
 
+    if (a == 0 && b != 0) {
+        solutions.sol_kol = 1;
+        solutions.sol_1 = -c/b;
+        return solutions;
+    }
+
     /* Дискриминант меньше нуля, решений нет */
     if (disc < 0) {
         return solutions;
