@@ -10,7 +10,7 @@ before_install:
 addons:
   sonarcloud:
     organization: "kristi-n-i"
-  token: $SONAR_KEY
+    token: $SONAR_KEY
 
 script:
   - qmake
